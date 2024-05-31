@@ -1,20 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Maui.Controls;
+using Aplikacja_mobilnavfcv2.Models;
+using System;
 
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace Aplikacja_mobilnavfcv2
+namespace Aplikacja_mobilnavfcv2.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddTeamPage : ContentPage
     {
         public AddTeamPage()
         {
             InitializeComponent();
+        }
+
+        private async void OnAddTeamClicked(object sender, EventArgs e)
+        {
+            var teamName = TeamNameEntry.Text;
+
+            if (!string.IsNullOrEmpty(teamName))
+            {
+                await App.Database.SaveTeamAsync(new Team { Name = teamName });
+
+                StatusLabel.Text = "Zespół został dodany.";
+                StatusLabel.IsVisible = true;
+
+                TeamNameEntry.Text = string.Empty;
+            }
+            else
+            {
+                StatusLabel.Text = "Proszę wpisać nazwę zespołu.";
+                StatusLabel.TextColor = Colors.Red;
+                StatusLabel.IsVisible = true;
+            }
         }
     }
 }

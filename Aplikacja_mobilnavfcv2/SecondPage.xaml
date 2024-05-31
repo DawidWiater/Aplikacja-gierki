@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Aplikacja_mobilnavfcv2.SecondPage"
+             x:Class="Aplikacja_mobilnavfcv2.Views.SecondPage"
              BackgroundImageSource="tlo.jpg"
              Title="Strona Główna">
     <AbsoluteLayout>
@@ -14,7 +14,6 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <!-- New row for the new button -->
             </Grid.RowDefinitions>
 
             <Label Grid.Row="0"

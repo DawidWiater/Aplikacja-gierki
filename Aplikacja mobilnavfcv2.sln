@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34902.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aplikacja_mobilnavfcv2", "Aplikacja mobilnavfcv2\Aplikacja_mobilnavfcv2.csproj", "{820CCC8F-AD56-4E3C-8972-2B3D03F55839}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aplikacja_mobilnavfcv2", "Aplikacja_mobilnavfcv2\Aplikacja_mobilnavfcv2.csproj", "{820CCC8F-AD56-4E3C-8972-2B3D03F55839}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,8 +20,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3C8C017A-9557-41A8-BDD1-77AEE0C3895C}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aplikacja_mobilnavfcv2.Views.AddMultipleTeamsPage"
+             Title="Dodaj Wiele Zespołów">
+    <StackLayout Padding="20">
+        <Label Text="Ile zespołów chcesz dodać?" FontSize="Large" />
+        <Entry x:Name="TeamCountEntry" Placeholder="Wpisz liczbę zespołów" Keyboard="Numeric" />
+
+        <Button Text="Dalej" Clicked="OnNextClicked" />
+
+        <ScrollView x:Name="TeamsScrollView" IsVisible="False" HeightRequest="400">
+            <StackLayout x:Name="TeamsStackLayout"></StackLayout>
+        </ScrollView>
+
+        <Button x:Name="SubmitTeamsButton" Text="Dodaj Zespoły" Clicked="OnSubmitTeamsClicked" IsVisible="False" />
+    </StackLayout>
+</ContentPage>

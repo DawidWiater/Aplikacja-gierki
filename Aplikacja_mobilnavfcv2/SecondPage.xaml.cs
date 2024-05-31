@@ -4,7 +4,7 @@ using System;
 using Android.OS;
 #endif
 
-namespace Aplikacja_mobilnavfcv2
+namespace Aplikacja_mobilnavfcv2.Views
 {
     public partial class SecondPage : ContentPage
     {
@@ -18,14 +18,14 @@ namespace Aplikacja_mobilnavfcv2
             // Tymczasowo przycisk nie bêdzie wykonywa³ ¿adnej akcji
         }
 
-        private void OnAddTeamPageClicked(object sender, EventArgs e)
+        private async void OnAddTeamPageClicked(object sender, EventArgs e)
         {
-            // Tymczasowo przycisk nie bêdzie wykonywa³ ¿adnej akcji
+            await Navigation.PushAsync(new AddTeamPage());
         }
 
-        private void OnAddMultipleTeamsPageClicked(object sender, EventArgs e)
+        private async void OnAddMultipleTeamsPageClicked(object sender, EventArgs e)
         {
-            // Tymczasowo przycisk nie bêdzie wykonywa³ ¿adnej akcji
+            await Navigation.PushAsync(new AddMultipleTeamsPage());
         }
 
         private void OnResetDatabaseClicked(object sender, EventArgs e)

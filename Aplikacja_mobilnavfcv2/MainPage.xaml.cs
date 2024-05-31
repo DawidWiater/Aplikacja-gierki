@@ -1,4 +1,7 @@
-﻿namespace Aplikacja_mobilnavfcv2
+﻿using Microsoft.Maui.Controls;
+using Aplikacja_mobilnavfcv2.Views;
+
+namespace Aplikacja_mobilnavfcv2
 {
     public partial class MainPage : ContentPage
     {
