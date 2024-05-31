@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aplikacja_mobilnavfcv2.SecondPage"
+             BackgroundImageSource="tlo.jpg"
+             Title="Strona Główna">
+    <AbsoluteLayout>
+        <Grid Padding="20" VerticalOptions="Center" HorizontalOptions="Center" AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <!-- New row for the new button -->
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Text="Liczba Graczy:"
+                   FontSize="Large"
+                   HorizontalOptions="Center" />
+
+            <Entry Grid.Row="1"
+                   x:Name="PlayersEntry"
+                   Placeholder="Wpisz liczbę graczy"
+                   Keyboard="Numeric"
+                   WidthRequest="200"
+                   HorizontalOptions="Center" />
+
+            <Button Grid.Row="2"
+                    Text="Dalej"
+                    Clicked="OnNextClicked"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    FontSize="16"
+                    CornerRadius="6"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    Margin="0,10" />
+
+            <Button Grid.Row="3"
+                    Text="Dodaj Zespół"
+                    Clicked="OnAddTeamPageClicked"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Blue"
+                    TextColor="White"
+                    FontSize="16"
+                    CornerRadius="6"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    Margin="0,10" />
+
+            <Button Grid.Row="4"
+                    Text="Dodaj Wiele Zespołów"
+                    Clicked="OnAddMultipleTeamsPageClicked"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Blue"
+                    TextColor="White"
+                    FontSize="16"
+                    CornerRadius="6"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    Margin="0,10" />
+
+            <Button Grid.Row="5"
+                    Text="Pokaż Wszystkie Zespoły"
+                    Clicked="OnShowTeamsClicked"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Green"
+                    TextColor="White"
+                    FontSize="16"
+                    CornerRadius="6"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    Margin="0,10" />
+
+            <Button Grid.Row="6"
+                    Text="Resetuj Bazę Danych"
+                    Clicked="OnResetDatabaseClicked"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Red"
+                    TextColor="White"
+                    FontSize="16"
+                    CornerRadius="6"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    Margin="0,10" />
+        </Grid>
+        <Button Text="Wyjście"
+                Clicked="OnExitClicked"
+                BackgroundColor="Red"
+                TextColor="White"
+                FontSize="16"
+                CornerRadius="6"
+                BorderColor="Black"
+                BorderWidth="1"
+                Margin="10"
+                AbsoluteLayout.LayoutBounds="0, 1, -1, -1"
+                AbsoluteLayout.LayoutFlags="PositionProportional" />
+    </AbsoluteLayout>
+</ContentPage>
