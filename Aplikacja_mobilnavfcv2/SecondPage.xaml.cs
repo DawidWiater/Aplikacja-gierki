@@ -13,11 +13,6 @@ namespace Aplikacja_mobilnavfcv2.Views
             InitializeComponent();
         }
 
-        private void OnNextClicked(object sender, EventArgs e)
-        {
-            // Tymczasowo przycisk nie bêdzie wykonywa³ ¿adnej akcji
-        }
-
         private async void OnAddTeamPageClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AddTeamPage());
@@ -52,6 +47,25 @@ namespace Aplikacja_mobilnavfcv2.Views
             // Alternatywne metody zamkniêcia aplikacji dla innych platform
             System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
 #endif
+        }
+
+        private async void OnNextClicked(object sender, EventArgs e)
+        {
+            if (int.TryParse(PlayersEntry.Text, out int playerCount) && playerCount > 0)
+            {
+                var teams = await App.Database.GetTeamsAsync();
+                if (playerCount > teams.Count)
+                {
+                    await DisplayAlert("B³¹d", "Liczba graczy nie mo¿e byæ wiêksza ni¿ liczba zespo³ów.", "OK");
+                    return;
+                }
+
+                await Navigation.PushAsync(new DrawTeamsPage(playerCount));
+            }
+            else
+            {
+                await DisplayAlert("B³¹d", "Proszê wpisaæ poprawn¹ liczbê graczy.", "OK");
+            }
         }
     }
 }
