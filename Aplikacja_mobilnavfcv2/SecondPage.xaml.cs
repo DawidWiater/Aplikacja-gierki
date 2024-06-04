@@ -28,9 +28,14 @@ namespace Aplikacja_mobilnavfcv2.Views
             await Navigation.PushAsync(new AddMultipleTeamsPage());
         }
 
-        private void OnResetDatabaseClicked(object sender, EventArgs e)
+        private async void OnResetDatabaseClicked(object sender, EventArgs e)
         {
-            // Tymczasowo przycisk nie bêdzie wykonywa³ ¿adnej akcji
+            bool confirm = await DisplayAlert("Resetuj Bazê Danych", "Czy na pewno chcesz usun¹æ wszystkie zespo³y?", "Tak", "Nie");
+            if (confirm)
+            {
+                await App.Database.DeleteAllTeamsAsync();
+                await DisplayAlert("Sukces", "Baza danych zosta³a zresetowana.", "OK");
+            }
         }
 
         private async void OnShowTeamsClicked(object sender, EventArgs e)

@@ -29,5 +29,11 @@ namespace Aplikacja_mobilnavfcv2
         {
             return _database.DeleteAsync(team);
         }
+
+        // Nowa metoda do usuwania wszystkich zespołów
+        public Task<int> DeleteAllTeamsAsync()
+        {
+            return _database.DeleteAllAsync<Team>();
+        }
     }
 }

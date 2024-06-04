@@ -59,7 +59,7 @@ namespace Aplikacja_mobilnavfcv2.Views
                 }
             }
 
-            await Navigation.PopToRootAsync();
+            await Navigation.PushAsync(new SecondPage());
         }
     }
 }
