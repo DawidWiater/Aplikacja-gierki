@@ -33,9 +33,9 @@ namespace Aplikacja_mobilnavfcv2.Views
             // Tymczasowo przycisk nie bêdzie wykonywa³ ¿adnej akcji
         }
 
-        private void OnShowTeamsClicked(object sender, EventArgs e)
+        private async void OnShowTeamsClicked(object sender, EventArgs e)
         {
-            // Tymczasowo przycisk nie bêdzie wykonywa³ ¿adnej akcji
+            await Navigation.PushAsync(new ShowTeamsPage());
         }
 
         private void OnExitClicked(object sender, EventArgs e)
