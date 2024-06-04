@@ -17,23 +17,39 @@ namespace Aplikacja_mobilnavfcv2
 
         public Task<List<Team>> GetTeamsAsync()
         {
-            return _database.Table<Team>().ToListAsync();
+            if (_database != null)
+            {
+                return _database.Table<Team>().ToListAsync();
+            }
+            return Task.FromResult(new List<Team>());
         }
 
         public Task<int> SaveTeamAsync(Team team)
         {
-            return _database.InsertAsync(team);
+            if (_database != null && team != null)
+            {
+                return _database.InsertAsync(team);
+            }
+            return Task.FromResult(0);
         }
 
         public Task<int> DeleteTeamAsync(Team team)
         {
-            return _database.DeleteAsync(team);
+            if (_database != null && team != null)
+            {
+                return _database.DeleteAsync(team);
+            }
+            return Task.FromResult(0);
         }
 
         // Nowa metoda do usuwania wszystkich zespołów
         public Task<int> DeleteAllTeamsAsync()
         {
-            return _database.DeleteAllAsync<Team>();
+            if (_database != null)
+            {
+                return _database.DeleteAllAsync<Team>();
+            }
+            return Task.FromResult(0);
         }
     }
 }
