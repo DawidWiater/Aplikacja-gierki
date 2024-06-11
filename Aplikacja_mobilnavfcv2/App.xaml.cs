@@ -25,7 +25,10 @@ namespace Aplikacja_mobilnavfcv2
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage())
+            {
+                Title = "FC losowanie zespolow"  // Nowa nazwa aplikacji
+            };
         }
     }
 }
