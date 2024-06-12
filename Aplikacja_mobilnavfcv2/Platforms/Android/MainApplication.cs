@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace Aplikacja_mobilnavfcv2
+namespace Aplikacja_gierki
 {
     [Application]
     public class MainApplication : MauiApplication

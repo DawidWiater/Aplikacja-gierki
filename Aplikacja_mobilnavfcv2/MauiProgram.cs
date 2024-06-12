@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace Aplikacja_mobilnavfcv2
+namespace Aplikacja_gierki
 {
     public static class MauiProgram
     {

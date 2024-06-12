@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Aplikacja_mobilnavfcv2.Views.ShowTeamsPage"
+             x:Class="Aplikacja_gierki.Views.ShowTeamsPage"
              Title="Lista Zespołów">
-    <StackLayout Padding="20">
-        <ListView x:Name="TeamsListView">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="10">
-                            <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
-                            <Label Text="Usuń" TextColor="Red" VerticalOptions="Center" HorizontalOptions="End">
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="OnDeleteTeamTapped" CommandParameter="{Binding .}" />
-                                </Label.GestureRecognizers>
-                            </Label>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+    <Grid>
+        <!-- Background Image -->
+        <Image Source="Resources/Images/tlo.jpg" Aspect="AspectFill"
+               VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+        <StackLayout Padding="20">
+            <ListView x:Name="TeamsListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="White"/>
+                                <Label Text="Usuń" TextColor="Red" VerticalOptions="Center" HorizontalOptions="End">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnDeleteTeamTapped" CommandParameter="{Binding .}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </Grid>
 </ContentPage>

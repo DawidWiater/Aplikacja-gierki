@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace Aplikacja_mobilnavfcv2
+namespace Aplikacja_gierki
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

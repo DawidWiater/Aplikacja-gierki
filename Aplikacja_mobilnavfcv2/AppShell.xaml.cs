@@ -1,4 +1,4 @@
-﻿namespace Aplikacja_mobilnavfcv2
+﻿namespace Aplikacja_gierki
 {
     public partial class AppShell : Shell
     {

@@ -4,7 +4,7 @@ using System;
 using Android.OS;
 #endif
 
-namespace Aplikacja_mobilnavfcv2.Views
+namespace Aplikacja_gierki.Views
 {
     public partial class SecondPage : ContentPage
     {

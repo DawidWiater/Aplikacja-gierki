@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace Aplikacja_mobilnavfcv2
+namespace Aplikacja_gierki
 {
     public partial class App : Application
     {

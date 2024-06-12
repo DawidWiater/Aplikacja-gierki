@@ -1,6 +1,6 @@
 ﻿using SQLite;
 
-namespace Aplikacja_mobilnavfcv2.Models
+namespace Aplikacja_gierki.Models
 {
     public class Team
     {

@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Aplikacja_mobilnavfcv2.Views.AddTeamPage"
+             x:Class="Aplikacja_gierki.Views.AddTeamPage"
              Title="Dodaj Zespół">
-    <StackLayout Padding="20">
-        <Label Text="Nazwa Zespołu:" FontSize="Large" />
-        <Entry x:Name="TeamNameEntry" Placeholder="Wpisz nazwę zespołu" />
-        <Button Text="Dodaj Zespół" Clicked="OnAddTeamClicked" />
-        <Label x:Name="StatusLabel" IsVisible="False" />
-    </StackLayout>
+    <Grid>
+        <!-- Background Image -->
+        <Image Source="Resources/Images/tlo.jpg" Aspect="AspectFill"
+               VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+        <StackLayout Padding="20">
+            <Label Text="Nazwa Zespołu:" FontSize="Large" TextColor="White"/>
+            <Entry x:Name="TeamNameEntry" Placeholder="Wpisz nazwę zespołu" />
+            <Button Text="Dodaj Zespół" Clicked="OnAddTeamClicked" />
+            <Label x:Name="StatusLabel" IsVisible="False" />
+        </StackLayout>
+    </Grid>
 </ContentPage>

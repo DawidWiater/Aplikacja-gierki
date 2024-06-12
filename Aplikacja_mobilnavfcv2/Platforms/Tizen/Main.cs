@@ -2,7 +2,7 @@ using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using System;
 
-namespace Aplikacja_mobilnavfcv2
+namespace Aplikacja_gierki
 {
     internal class Program : MauiApplication
     {

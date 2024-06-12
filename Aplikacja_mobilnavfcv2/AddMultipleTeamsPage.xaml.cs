@@ -1,9 +1,9 @@
 using Microsoft.Maui.Controls;
 using System;
 using System.Collections.Generic;
-using Aplikacja_mobilnavfcv2.Models;
+using Aplikacja_gierki.Models;
 
-namespace Aplikacja_mobilnavfcv2.Views
+namespace Aplikacja_gierki.Views
 {
     public partial class AddMultipleTeamsPage : ContentPage
     {

@@ -1,9 +1,9 @@
 ﻿using SQLite;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Aplikacja_mobilnavfcv2.Models;
+using Aplikacja_gierki.Models;
 
-namespace Aplikacja_mobilnavfcv2
+namespace Aplikacja_gierki
 {
     public class TeamDatabase
     {

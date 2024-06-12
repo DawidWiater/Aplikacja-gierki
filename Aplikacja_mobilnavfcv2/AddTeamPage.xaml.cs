@@ -1,8 +1,8 @@
 ﻿using Microsoft.Maui.Controls;
-using Aplikacja_mobilnavfcv2.Models;
+using Aplikacja_gierki.Models;
 using System;
 
-namespace Aplikacja_mobilnavfcv2.Views
+namespace Aplikacja_gierki.Views
 {
     public partial class AddTeamPage : ContentPage
     {

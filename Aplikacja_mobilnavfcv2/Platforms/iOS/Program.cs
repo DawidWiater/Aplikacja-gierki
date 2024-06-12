@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace Aplikacja_mobilnavfcv2
+namespace Aplikacja_gierki
 {
     public class Program
     {

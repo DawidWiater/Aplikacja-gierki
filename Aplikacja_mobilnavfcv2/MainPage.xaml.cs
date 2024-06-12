@@ -1,7 +1,7 @@
 ﻿using Microsoft.Maui.Controls;
-using Aplikacja_mobilnavfcv2.Views;
+using Aplikacja_gierki.Views;
 
-namespace Aplikacja_mobilnavfcv2
+namespace Aplikacja_gierki
 {
     public partial class MainPage : ContentPage
     {
