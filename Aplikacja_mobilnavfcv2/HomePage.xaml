@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aplikacja_gierki.Views.HomePage"
+             Title="Strona Główna">
+    <Grid>
+        <!-- Background Image -->
+        <Image Source="Resources/Images/tlo.jpg" Aspect="AspectFill"
+               VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+
+        <!-- Overlay content -->
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20" Spacing="20">
+            <Label Text="Witamy w aplikacji gierki, co dzisiaj robimy?" 
+                   FontSize="Large" 
+                   TextColor="White" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="CenterAndExpand"/>
+            <Button Text="FIFA" 
+                    FontSize="Medium" 
+                    TextColor="White" 
+                    BackgroundColor="DarkBlue" 
+                    Clicked="OnFifaClicked" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"/>
+            <Button Text="GRID" 
+                    FontSize="Medium" 
+                    TextColor="White" 
+                    BackgroundColor="Gray" 
+                    Clicked="OnGridClicked" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

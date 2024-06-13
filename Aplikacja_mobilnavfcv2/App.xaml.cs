@@ -25,9 +25,9 @@ namespace Aplikacja_gierki
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage())
+            MainPage = new NavigationPage(new Views.HomePage())
             {
-                Title = "FC losowanie zespolow"  // Nowa nazwa aplikacji
+                Title = "Aplikacja Gierki"
             };
         }
     }
