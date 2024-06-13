@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Aplikacja_gierki.Views.HomePage"
+             x:Class="Aplikacja_gierki.Views.BlurHomePage"
              Title="Strona Główna">
     <Grid>
         <!-- Background Image -->
-        <Image Source="Resources/Images/gierki.jpg" Aspect="AspectFill"
+        <Image Source="Resources/Images/tlo.jpg" Aspect="AspectFill"
                VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
 
         <!-- Overlay content -->
@@ -15,18 +15,25 @@
                    TextColor="White" 
                    HorizontalOptions="Center" 
                    VerticalOptions="CenterAndExpand"/>
-            <Button Text="FIFA" 
+            <Button Text="4 Player Tournament" 
                     FontSize="Medium" 
-                    TextColor="Black" 
-                    BackgroundColor="White" 
-                    Clicked="OnFifaClicked" 
+                    TextColor="White" 
+                    BackgroundColor="DarkBlue" 
+                    Clicked="OnFourPlayerClicked" 
                     HorizontalOptions="Center" 
                     VerticalOptions="Center"/>
-            <Button Text="GLUR" 
+            <Button Text="4+ Player Tournament" 
                     FontSize="Medium" 
-                    TextColor="Black" 
-                    BackgroundColor="White" 
-                    Clicked="OnGridClicked" 
+                    TextColor="White" 
+                    BackgroundColor="Gray" 
+                    Clicked="OnMoreThanFourPlayerClicked" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"/>
+            <Button Text="Wyjście" 
+                    FontSize="Medium" 
+                    TextColor="White" 
+                    BackgroundColor="Red" 
+                    Clicked="OnExitClicked" 
                     HorizontalOptions="Center" 
                     VerticalOptions="Center"/>
         </StackLayout>

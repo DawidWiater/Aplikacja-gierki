@@ -15,9 +15,9 @@ namespace Aplikacja_gierki.Views
             await Navigation.PushAsync(new MainPage());
         }
 
-        private void OnGridClicked(object sender, EventArgs e)
+        private async void OnGridClicked(object sender, EventArgs e)
         {
-            // Obecnie brak akcji
+            await Navigation.PushAsync(new BlurHomePage());
         }
     }
 }
