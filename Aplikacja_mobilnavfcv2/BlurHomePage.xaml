@@ -5,7 +5,7 @@
              Title="Strona Główna">
     <Grid>
         <!-- Background Image -->
-        <Image Source="Resources/Images/tlo.jpg" Aspect="AspectFill"
+        <Image Source="Resources/Images/blur1.jpg" Aspect="AspectFill"
                VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
 
         <!-- Overlay content -->

@@ -46,6 +46,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<MauiXaml Update="EnterNumberOfParticipantsPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="EnterParticipantsNamesPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="TournamentPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="Views\BlurHomePage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
