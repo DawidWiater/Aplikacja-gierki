@@ -22,7 +22,7 @@
                     Clicked="OnFifaClicked" 
                     HorizontalOptions="Center" 
                     VerticalOptions="Center"/>
-            <Button Text="GLUR" 
+            <Button Text="BLUR" 
                     FontSize="Medium" 
                     TextColor="Black" 
                     BackgroundColor="White" 
