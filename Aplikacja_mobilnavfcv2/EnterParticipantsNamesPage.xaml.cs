@@ -17,6 +17,7 @@ namespace Aplikacja_gierki.Views
                 ParticipantsNames.Add(new Participant { Name = string.Empty });
             }
             BindingContext = this;
+            ParticipantsNamesCollectionView.ItemsSource = ParticipantsNames;
         }
 
         // Metoda obs³uguj¹ca klikniêcie przycisku "Dalej"

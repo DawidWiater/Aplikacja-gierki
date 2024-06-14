@@ -24,11 +24,5 @@ namespace Aplikacja_gierki.Views
                 await DisplayAlert("B³¹d", "Proszê wpisaæ liczbê uczestników od 5 do 10.", "OK");
             }
         }
-
-        // Metoda obs³uguj¹ca fokus na polu tekstowym
-        private void OnEntryFocused(object sender, FocusEventArgs e)
-        {
-            NumberOfParticipantsEntry.Focus();
-        }
     }
 }
