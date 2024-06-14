@@ -1,9 +1,3 @@
-using Microsoft.Maui.Controls;
-using System;
-#if ANDROID
-using Android.OS;
-#endif
-
 namespace Aplikacja_gierki.Views
 {
     public partial class SecondPage : ContentPage
@@ -40,11 +34,9 @@ namespace Aplikacja_gierki.Views
 
         private void OnExitClicked(object sender, EventArgs e)
         {
-            // Specyficzne dla platformy Android zamkniêcie aplikacji
 #if ANDROID
-            Process.KillProcess(Process.MyPid());
+            Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
 #else
-            // Alternatywne metody zamkniêcia aplikacji dla innych platform
             System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
 #endif
         }

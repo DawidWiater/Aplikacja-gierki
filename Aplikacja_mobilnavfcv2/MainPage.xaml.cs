@@ -1,7 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-using Aplikacja_gierki.Views;
-
-namespace Aplikacja_gierki
+﻿namespace Aplikacja_gierki.Views
 {
     public partial class MainPage : ContentPage
     {

@@ -6,13 +6,13 @@
     <Grid>
         <!-- Background Image -->
         <Image Source="Resources/Images/gierki.jpg" Aspect="AspectFill"
-               VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+               VerticalOptions="FillAndExpand" BackgroundColor="Aqua" HorizontalOptions="FillAndExpand" />
 
         <!-- Overlay content -->
-        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20" Spacing="20">
+        <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Padding="10" Spacing="5" Margin="0,0,0,120" BackgroundColor="Aqua">
             <Label Text="Witamy w aplikacji gierki, co dzisiaj robimy?" 
                    FontSize="Large" 
-                   TextColor="White" 
+                   TextColor="Black" 
                    HorizontalOptions="Center" 
                    VerticalOptions="CenterAndExpand"/>
             <Button Text="FIFA" 

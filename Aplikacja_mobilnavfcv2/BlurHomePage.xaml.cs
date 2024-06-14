@@ -1,6 +1,3 @@
-using Microsoft.Maui.Controls;
-using System;
-
 namespace Aplikacja_gierki.Views
 {
     public partial class BlurHomePage : ContentPage

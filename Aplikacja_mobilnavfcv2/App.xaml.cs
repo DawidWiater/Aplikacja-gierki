@@ -25,10 +25,7 @@ namespace Aplikacja_gierki
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Views.HomePage())
-            {
-                Title = "Aplikacja Gierki"
-            };
+            MainPage = new AppShell();
         }
     }
 }
