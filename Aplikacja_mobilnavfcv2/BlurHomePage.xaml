@@ -10,19 +10,19 @@
 
         <!-- Overlay content -->
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20" Spacing="20">
-            <Label Text="Witamy w aplikacji gierki, co dzisiaj robimy?" 
+            <Label Text="jaki rodzaj turnieju? :" 
                    FontSize="Large" 
                    TextColor="White" 
                    HorizontalOptions="Center" 
                    VerticalOptions="CenterAndExpand"/>
-            <Button Text="4 Player Tournament" 
+            <Button Text="4 osobowy" 
                     FontSize="Medium" 
                     TextColor="White" 
                     BackgroundColor="DarkBlue" 
                     Clicked="OnFourPlayerClicked" 
                     HorizontalOptions="Center" 
                     VerticalOptions="Center"/>
-            <Button Text="4+ Player Tournament" 
+            <Button Text="4+ osobowy" 
                     FontSize="Medium" 
                     TextColor="White" 
                     BackgroundColor="Gray" 
