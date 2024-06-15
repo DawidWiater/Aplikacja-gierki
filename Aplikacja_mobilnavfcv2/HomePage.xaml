@@ -5,7 +5,7 @@
              Title="Strona Główna">
     <Grid>
         <!-- Background Image -->
-        <Image Source="Resources/Images/gierki.jpg" Aspect="AspectFill"
+        <Image Source="Resources/Images/gierki.jpg" Aspect="AspectFit"
                VerticalOptions="FillAndExpand" BackgroundColor="Aqua" HorizontalOptions="FillAndExpand" />
 
         <!-- Overlay content -->

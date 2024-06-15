@@ -1,0 +1,86 @@
+﻿# Dokumentacja stron aplikacji, 
+
+## HomePage
+- Nazwa: Strona Główna
+- Ścieżka: Views/HomePage.xaml
+- Opis: Strona główna aplikacji, która zawiera przyciski do przejścia do innych stron oraz tło obrazka. 
+- Elementy:
+  - Label: Witamy w aplikacji gierki, co dzisiaj robimy?
+  - Button: FIFA (przenosi do MainPage)
+  - Button: BLUR (przenosi do BlurHomePage)
+
+## BlurHomePage
+- Nazwa: Strona Blur
+- Ścieżka: Views/BlurHomePage.xaml
+- Opis: Strona wyboru rodzaju turnieju. Użytkownik może wybrać między turniejem 4-osobowym a turniejem dla więcej niż 4 osób.
+- Elementy:
+  - Label: jaki rodzaj turnieju?
+  - Button: 4 osobowy
+  - Button: 4+ osobowy
+  - Button: Wyjście (zamknięcie aplikacji)
+
+## EnterNumberOfParticipantsPage
+- Nazwa: Liczba Uczestników
+- Ścieżka: Views/EnterNumberOfParticipantsPage.xaml
+- Opis: Strona umożliwiająca użytkownikowi wprowadzenie liczby uczestników turnieju.
+- Elementy:
+  - Label: Podaj liczbę uczestników
+  - Entry: Pole tekstowe do wprowadzenia liczby uczestników
+  - Button: Dalej (przenosi do EnterParticipantsNamesPage)
+
+## EnterParticipantsNamesPage
+- Nazwa: Imiona Uczestników
+- Ścieżka: Views/EnterParticipantsNamesPage.xaml
+- Opis: Strona umożliwiająca użytkownikowi wprowadzenie imion uczestników turnieju.
+- Elementy:
+  - Label: Podaj imiona uczestników
+  - CollectionView: Lista pól tekstowych do wprowadzenia imion uczestników
+  - Button: Dalej (przenosi do TournamentPage)
+
+## TournamentPage
+- Nazwa: Strona Turniejowa
+- Ścieżka: Views/TournamentPage.xaml
+- Opis: Strona wyświetlająca listę uczestników turnieju.
+- Elementy:
+  - Label: Strona Turniejowa
+  - CollectionView: Lista uczestników turnieju
+
+
+
+  App.xaml.cs:
+- Ten plik jest odpowiedzialny za inicjalizację aplikacji.
+- Tworzy instancję bazy danych `TeamDatabase` i przypisuje ją do statycznej właściwości `Database`.
+- Ustawia główną stronę aplikacji na `MainPage`.
+
+TeamDatabase.cs:
+- Ten plik definiuje klasę `TeamDatabase`, która zarządza operacjami bazy danych dla zespołów.
+- Obejmuje metody do tworzenia tabeli zespołów, dodawania zespołu, usuwania zespołu oraz czyszczenia całej bazy danych.
+
+Team.cs:
+- Ten plik definiuje model `Team`, który reprezentuje dane zespołu.
+- Zawiera właściwości `Id` (klucz podstawowy) i `Name` (nazwa zespołu).
+
+AddTeamPage.xaml i AddTeamPage.xaml.cs:
+- Te pliki definiują stronę, która umożliwia dodanie pojedynczego zespołu do bazy danych.
+- Strona zawiera pole wprowadzania dla nazwy zespołu i przycisk do dodania zespołu.
+- Po kliknięciu przycisku zespół jest dodawany do bazy danych, a pole wprowadzania jest czyszczone.
+
+AddMultipleTeamsPage.xaml i AddMultipleTeamsPage.xaml.cs:
+- Te pliki definiują stronę, która umożliwia dodanie wielu zespołów do bazy danych.
+- Strona zawiera pole wprowadzania dla liczby zespołów do dodania oraz dynamicznie generowane pola wprowadzania dla nazw zespołów.
+- Po kliknięciu przycisku "Dalej" generowane są pola wprowadzania dla każdej nazwy zespołu.
+- Po kliknięciu przycisku "Dodaj Zespoły" zespoły są dodawane do bazy danych.
+
+SecondPage.xaml i SecondPage.xaml.cs:
+- Te pliki definiują stronę główną aplikacji.
+- Strona zawiera przyciski do nawigacji do stron dodawania zespołów, pokazywania wszystkich zespołów oraz resetowania bazy danych.
+- Każdy przycisk wywołuje odpowiednie metody nawigacji lub operacje na bazie danych.
+
+ShowTeamsPage.xaml i ShowTeamsPage.xaml.cs:
+- Te pliki definiują stronę, która wyświetla wszystkie zespoły zapisane w bazie danych.
+- Strona zawiera ListView, która wyświetla nazwy zespołów oraz przyciski do usuwania poszczególnych zespołów.
+- Po kliknięciu przycisku "Usuń" zespół jest usuwany z bazy danych.
+
+AppShell.xaml:
+- Ten plik definiuje strukturę nawigacyjną aplikacji.
+- Rejestruje wszystkie strony aplikacji, aby były dostępne dla nawigacji.
