@@ -49,6 +49,9 @@
 		<MauiXaml Update="EnterNumberOfParticipantsPage.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+		<MauiXaml Update="EnterNumberOfRacesPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="EnterParticipantsNamesPage.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>

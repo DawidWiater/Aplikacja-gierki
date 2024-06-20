@@ -3,17 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Aplikacja_gierki.Views.TournamentPage"
              Title="Strona Turniejowa">
-    <VerticalStackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-        <Label Text="Strona Turniejowa" 
-               FontSize="Large" 
-               HorizontalOptions="Center" 
-               VerticalOptions="CenterAndExpand"/>
-        <CollectionView x:Name="ParticipantsListView">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Name}" />
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label Text="Turniej" FontSize="Large" HorizontalOptions="Center" />
+            <Label x:Name="NumberOfRacesLabel" FontSize="Large" HorizontalOptions="Center" />
+            <CollectionView x:Name="RacesCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Padding="10">
+                            <Label Text="{Binding Title}" FontSize="Medium" FontAttributes="Bold" />
+                            <Label Text="{Binding Participants}" FontSize="Small" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

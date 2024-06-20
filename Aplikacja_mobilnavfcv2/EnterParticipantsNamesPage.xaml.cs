@@ -1,17 +1,17 @@
 using System.Collections.ObjectModel;
+using Microsoft.Maui.Controls;
+using Aplikacja_gierki.Models;
 
 namespace Aplikacja_gierki.Views
 {
     public partial class EnterParticipantsNamesPage : ContentPage
     {
-        // Kolekcja do przechowywania imion uczestników
         public ObservableCollection<Participant> ParticipantsNames { get; set; }
 
         public EnterParticipantsNamesPage(int numberOfParticipants)
         {
             InitializeComponent();
             ParticipantsNames = new ObservableCollection<Participant>();
-            // Dodaje puste pola dla ka¿dego uczestnika
             for (int i = 0; i < numberOfParticipants; i++)
             {
                 ParticipantsNames.Add(new Participant { Name = string.Empty });
@@ -20,17 +20,9 @@ namespace Aplikacja_gierki.Views
             ParticipantsNamesCollectionView.ItemsSource = ParticipantsNames;
         }
 
-        // Metoda obs³uguj¹ca klikniêcie przycisku "Dalej"
         private async void OnNextClicked(object sender, EventArgs e)
         {
-            // Przenosi na stronê turniejow¹ z imionami uczestników
-            await Navigation.PushAsync(new TournamentPage(ParticipantsNames));
+            await Navigation.PushAsync(new EnterNumberOfRacesPage(ParticipantsNames));
         }
-    }
-
-    // Klasa modelu do przechowywania imion uczestników
-    public class Participant
-    {
-        public string Name { get; set; } = string.Empty;
     }
 }
