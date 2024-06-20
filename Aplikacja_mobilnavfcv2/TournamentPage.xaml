@@ -8,7 +8,7 @@
         <VerticalStackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
             <Label Text="Turniej" FontSize="Large" HorizontalOptions="Center" />
             <Label x:Name="NumberOfRacesLabel" FontSize="Large" HorizontalOptions="Center" />
-            <CollectionView x:Name="RacesCollectionView">
+            <CollectionView x:Name="RacesCollectionView" ItemsSource="{Binding VisibleRaces}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <VerticalStackLayout Padding="10">
@@ -23,6 +23,7 @@
                                     </DataTemplate>
                                 </CollectionView.ItemTemplate>
                             </CollectionView>
+                            <Button Text="Akceptuj" Clicked="OnAcceptClicked" CommandParameter="{Binding .}" />
                         </VerticalStackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

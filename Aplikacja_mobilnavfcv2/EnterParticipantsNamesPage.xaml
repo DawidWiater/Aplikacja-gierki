@@ -8,12 +8,12 @@
                FontSize="Large" 
                HorizontalOptions="Center" 
                VerticalOptions="CenterAndExpand"/>
-        <ScrollView HeightRequest="200">
+        <ScrollView>
             <CollectionView x:Name="ParticipantsNamesCollectionView" ItemsSource="{Binding ParticipantsNames}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <VerticalStackLayout>
-                            <Entry Placeholder="{Binding Name}" Text="{Binding Name}" />
+                            <Entry Placeholder="Imię uczestnika" Text="{Binding Name}" />
                         </VerticalStackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
