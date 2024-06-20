@@ -8,13 +8,12 @@ namespace Aplikacja_gierki.Views
 {
     public partial class TournamentPage : ContentPage
     {
-        public ObservableCollection<Race> Races { get; set; }
+        public ObservableCollection<Race> Races { get; set; } = new ObservableCollection<Race>();
 
         public TournamentPage(ObservableCollection<Participant> participants, int numberOfRaces)
         {
             InitializeComponent();
             NumberOfRacesLabel.Text = $"Liczba wyœcigów: {numberOfRaces}";
-            Races = new ObservableCollection<Race>();
             GenerateRaces(participants, numberOfRaces);
             RacesCollectionView.ItemsSource = Races;
         }
@@ -26,8 +25,8 @@ namespace Aplikacja_gierki.Views
 
             for (int i = 1; i <= numberOfRaces; i++)
             {
-                var shuffledParticipants = participantList.OrderBy(x => random.Next()).ToList();
-                var raceParticipants = string.Join(", ", shuffledParticipants.Take(4).Select(p => p.Name));
+                var shuffledParticipants = participantList.OrderBy(x => random.Next()).Take(4).ToList();
+                var raceParticipants = shuffledParticipants.Select(p => new RaceParticipant { Name = p.Name }).ToList();
                 Races.Add(new Race { Title = $"Wyœcig {i}", Participants = raceParticipants });
             }
         }
@@ -35,7 +34,13 @@ namespace Aplikacja_gierki.Views
 
     public class Race
     {
-        public string Title { get; set; }
-        public string Participants { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public List<RaceParticipant> Participants { get; set; } = new List<RaceParticipant>();
+    }
+
+    public class RaceParticipant
+    {
+        public string Name { get; set; } = string.Empty;
+        public int Points { get; set; } = 0;
     }
 }

@@ -8,15 +8,17 @@
                FontSize="Large" 
                HorizontalOptions="Center" 
                VerticalOptions="CenterAndExpand"/>
-        <CollectionView x:Name="ParticipantsNamesCollectionView" ItemsSource="{Binding ParticipantsNames}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <VerticalStackLayout>
-                        <Entry Placeholder="Imię uczestnika" Text="{Binding Name}" />
-                    </VerticalStackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <ScrollView HeightRequest="200">
+            <CollectionView x:Name="ParticipantsNamesCollectionView" ItemsSource="{Binding ParticipantsNames}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <Entry Placeholder="{Binding Name}" Text="{Binding Name}" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
         <Button Text="Dalej" 
                 FontSize="Medium" 
                 TextColor="White" 

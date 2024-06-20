@@ -14,7 +14,7 @@ namespace Aplikacja_gierki.Views
             ParticipantsNames = new ObservableCollection<Participant>();
             for (int i = 0; i < numberOfParticipants; i++)
             {
-                ParticipantsNames.Add(new Participant { Name = string.Empty });
+                ParticipantsNames.Add(new Participant { Name = $"Gracz {i + 1}" });
             }
             BindingContext = this;
             ParticipantsNamesCollectionView.ItemsSource = ParticipantsNames;
