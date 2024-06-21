@@ -3,7 +3,6 @@ using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Aplikacja_gierki.Models;
-using Aplikacja_gierki.Data;
 using System.Threading.Tasks;
 
 namespace Aplikacja_gierki.Views
@@ -13,15 +12,17 @@ namespace Aplikacja_gierki.Views
         private ObservableCollection<Race> AllRaces { get; set; } = new ObservableCollection<Race>();
         public ObservableCollection<Race> VisibleRaces { get; set; } = new ObservableCollection<Race>();
 
+        // Konstruktor inicjalizuj¹cy stronê turniejow¹
         public TournamentPage(ObservableCollection<Participant> participants, int numberOfRaces)
         {
-            InitializeComponent();
-            NumberOfRacesLabel.Text = $"Liczba wyœcigów: {numberOfRaces}";
-            GenerateRaces(participants, numberOfRaces);
-            LoadNextRaces();
-            BindingContext = this;
+            InitializeComponent(); // Inicjalizacja komponentów
+            NumberOfRacesLabel.Text = $"Liczba wyœcigów: {numberOfRaces}"; // Ustawienie liczby wyœcigów
+            GenerateRaces(participants, numberOfRaces); // Generowanie wyœcigów
+            LoadNextRaces(); // Wczytywanie pierwszych wyœcigów
+            BindingContext = this; // Ustawienie kontekstu danych
         }
 
+        // Metoda generuj¹ca wyœcigi na podstawie uczestników i liczby wyœcigów
         private void GenerateRaces(ObservableCollection<Participant> participants, int numberOfRaces)
         {
             var random = new Random();
@@ -35,6 +36,7 @@ namespace Aplikacja_gierki.Views
             }
         }
 
+        // Metoda wczytuj¹ca kolejne wyœcigi do widocznej listy
         private void LoadNextRaces()
         {
             while (VisibleRaces.Count < 2 && AllRaces.Any())
@@ -42,20 +44,28 @@ namespace Aplikacja_gierki.Views
                 VisibleRaces.Add(AllRaces.First());
                 AllRaces.RemoveAt(0);
             }
+
+            if (!AllRaces.Any() && !VisibleRaces.Any())
+            {
+                // Przeniesienie u¿ytkownika na stronê wyników po zakoñczeniu wszystkich wyœcigów
+                Navigation.PushAsync(new TournamentResultsPage(new ObservableCollection<Race>(AllRaces)));
+            }
         }
 
+        // Metoda obs³uguj¹ca klikniêcie przycisku "Akceptuj" dla wyœcigu
         private async void OnAcceptClicked(object sender, EventArgs e)
         {
             var button = sender as Button;
             var race = button?.CommandParameter as Race;
             if (race != null)
             {
-                await SaveRaceResultsAsync(race);
-                VisibleRaces.Remove(race);
-                LoadNextRaces();
+                await SaveRaceResultsAsync(race); // Zapis wyników wyœcigu
+                VisibleRaces.Remove(race); // Usuniêcie wyœcigu z widocznej listy
+                LoadNextRaces(); // Wczytanie kolejnych wyœcigów
             }
         }
 
+        // Metoda zapisuj¹ca wyniki wyœcigu do bazy danych
         private async Task SaveRaceResultsAsync(Race race)
         {
             foreach (var participant in race.Participants)
@@ -66,20 +76,22 @@ namespace Aplikacja_gierki.Views
                     ParticipantName = participant.Name,
                     Points = participant.Points
                 };
-                await App.BlurDatabase.SaveRaceResultAsync(result);
+                await App.BlurDatabase.SaveRaceResultAsync(result); // Zapis wyniku do bazy danych
             }
         }
     }
 
+    // Klasa modelu wyœcigu
     public class Race
     {
-        public string Title { get; set; } = string.Empty;
-        public List<RaceParticipant> Participants { get; set; } = new List<RaceParticipant>();
+        public string Title { get; set; } = string.Empty; // Tytu³ wyœcigu
+        public List<RaceParticipant> Participants { get; set; } = new List<RaceParticipant>(); // Lista uczestników wyœcigu
     }
 
+    // Klasa modelu uczestnika wyœcigu
     public class RaceParticipant
     {
-        public string Name { get; set; } = string.Empty;
-        public int Points { get; set; } = 0;
+        public string Name { get; set; } = string.Empty; // Nazwa uczestnika
+        public int Points { get; set; } = 0; // Liczba punktów uczestnika
     }
 }

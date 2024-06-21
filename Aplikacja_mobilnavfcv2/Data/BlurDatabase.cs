@@ -1,7 +1,7 @@
-using Aplikacja_gierki.Models;
 using SQLite;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Aplikacja_gierki.Models;
 
 namespace Aplikacja_gierki.Data
 {
@@ -13,6 +13,7 @@ namespace Aplikacja_gierki.Data
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<RaceResult>().Wait();
+            _database.CreateTableAsync<TournamentResult>().Wait();
         }
 
         public Task<List<RaceResult>> GetRaceResultsAsync()
@@ -21,6 +22,11 @@ namespace Aplikacja_gierki.Data
         }
 
         public Task<int> SaveRaceResultAsync(RaceResult result)
+        {
+            return _database.InsertAsync(result);
+        }
+
+        public Task<int> SaveTournamentResultAsync(TournamentResult result)
         {
             return _database.InsertAsync(result);
         }
