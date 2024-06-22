@@ -24,7 +24,7 @@
         ContentTemplate="{DataTemplate local:SecondPage}"
         Route="SecondPage" />
     <ShellContent
-        Title="TournamentResults"
-        ContentTemplate="{DataTemplate local:TournamentResultsPage}"
-        Route="TournamentResultsPage" />
+        Title="Summary"
+        ContentTemplate="{DataTemplate local:SummaryPage}"
+        Route="SummaryPage" />
 </Shell>

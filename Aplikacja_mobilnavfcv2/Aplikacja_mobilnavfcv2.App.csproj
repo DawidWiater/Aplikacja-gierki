@@ -55,10 +55,10 @@
 		<MauiXaml Update="EnterParticipantsNamesPage.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
-		<MauiXaml Update="TournamentPage.xaml">
+		<MauiXaml Update="SummaryPage.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
-		<MauiXaml Update="TournamentResultsPage.xaml">
+		<MauiXaml Update="TournamentPage.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Views\BlurHomePage.xaml">

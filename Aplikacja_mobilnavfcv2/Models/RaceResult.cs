@@ -6,8 +6,8 @@ namespace Aplikacja_gierki.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string RaceTitle { get; set; }
-        public string ParticipantName { get; set; }
+        public string RaceTitle { get; set; } = string.Empty; // Domyœlna wartoœæ
+        public string ParticipantName { get; set; } = string.Empty; // Domyœlna wartoœæ
         public int Points { get; set; }
     }
 }

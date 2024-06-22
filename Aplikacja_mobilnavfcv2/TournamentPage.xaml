@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Aplikacja_gierki.Models"
+             xmlns:models="clr-namespace:Aplikacja_gierki.Models"
              x:Class="Aplikacja_gierki.Views.TournamentPage"
              Title="Strona Turniejowa">
     <ScrollView>
@@ -18,7 +18,7 @@
                                     <DataTemplate>
                                         <HorizontalStackLayout>
                                             <Label Text="{Binding Name}" FontSize="Small" VerticalOptions="Center" />
-                                            <Entry Placeholder="Punkty" Text="{Binding Points, Mode=TwoWay}" Keyboard="Numeric" WidthRequest="50" VerticalOptions="Center" />
+                                            <Picker ItemsSource="{x:Static models:Points.Values}" SelectedItem="{Binding Points, Mode=TwoWay}" WidthRequest="100" VerticalOptions="Center" />
                                         </HorizontalStackLayout>
                                     </DataTemplate>
                                 </CollectionView.ItemTemplate>

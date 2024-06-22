@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aplikacja_gierki.Views.SummaryPage"
+             Title="Podsumowanie Wyników">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label Text="Podsumowanie Wyników" FontSize="Large" HorizontalOptions="Center" />
+            <CollectionView x:Name="SummaryCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Padding="10">
+                            <Label Text="{Binding Name}" FontSize="Medium" FontAttributes="Bold" />
+                            <Label Text="{Binding TotalPoints, StringFormat='Suma Punktów: {0}'}" FontSize="Small" />
+                            <Label Text="{Binding RacesParticipated, StringFormat='Liczba Wyścigów: {0}'}" FontSize="Small" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="Resetuj Wyniki" 
+                    FontSize="Medium" 
+                    TextColor="White" 
+                    BackgroundColor="Red" 
+                    Clicked="OnResetClicked" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="EndAndExpand"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

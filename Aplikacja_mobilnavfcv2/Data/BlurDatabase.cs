@@ -30,5 +30,13 @@ namespace Aplikacja_gierki.Data
         {
             return _database.InsertAsync(result);
         }
+
+        public async Task ResetDatabaseAsync()
+        {
+            await _database.DropTableAsync<RaceResult>();
+            await _database.DropTableAsync<TournamentResult>();
+            await _database.CreateTableAsync<RaceResult>();
+            await _database.CreateTableAsync<TournamentResult>();
+        }
     }
 }

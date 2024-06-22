@@ -47,8 +47,8 @@ namespace Aplikacja_gierki.Views
 
             if (!AllRaces.Any() && !VisibleRaces.Any())
             {
-                // Przeniesienie u¿ytkownika na stronê wyników po zakoñczeniu wszystkich wyœcigów
-                Navigation.PushAsync(new TournamentResultsPage(new ObservableCollection<Race>(AllRaces)));
+                // Przeniesienie u¿ytkownika na stronê podsumowania po zakoñczeniu wszystkich wyœcigów
+                Navigation.PushAsync(new SummaryPage());
             }
         }
 
