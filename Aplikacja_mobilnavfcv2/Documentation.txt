@@ -1,9 +1,10 @@
-﻿# Dokumentacja stron aplikacji, 
+﻿
+# Dokumentacja stron aplikacji
 
 ## HomePage
 - Nazwa: Strona Główna
 - Ścieżka: Views/HomePage.xaml
-- Opis: Strona główna aplikacji, która zawiera przyciski do przejścia do innych stron oraz tło obrazka. 
+- Opis: Strona główna aplikacji, która zawiera przyciski do przejścia do innych stron oraz tło obrazka.
 - Elementy:
   - Label: Witamy w aplikacji gierki, co dzisiaj robimy?
   - Button: FIFA (przenosi do MainPage)
@@ -35,15 +36,35 @@
 - Elementy:
   - Label: Podaj imiona uczestników
   - CollectionView: Lista pól tekstowych do wprowadzenia imion uczestników
+  - Button: Dalej (przenosi do EnterNumberOfRacesPage)
+
+## EnterNumberOfRacesPage
+- Nazwa: Liczba Wyścigów
+- Ścieżka: Views/EnterNumberOfRacesPage.xaml
+- Opis: Strona umożliwiająca użytkownikowi wprowadzenie liczby wyścigów w turnieju.
+- Elementy:
+  - Label: Podaj liczbę wyścigów
+  - Entry: Pole tekstowe do wprowadzenia liczby wyścigów
   - Button: Dalej (przenosi do TournamentPage)
 
 ## TournamentPage
 - Nazwa: Strona Turniejowa
 - Ścieżka: Views/TournamentPage.xaml
-- Opis: Strona wyświetlająca listę uczestników turnieju.
+- Opis: Strona wyświetlająca listę uczestników turnieju oraz pozwalająca na wpisanie punktów dla każdego wyścigu.
 - Elementy:
   - Label: Strona Turniejowa
-  - CollectionView: Lista uczestników turnieju
+  - Label: Liczba wyścigów
+  - CollectionView: Lista wyścigów oraz uczestników z możliwością wpisania punktów
+  - Button: Akceptuj (zapisuje punkty i przechodzi do następnego wyścigu)
+
+## SummaryPage
+- Nazwa: Podsumowanie Wyników
+- Ścieżka: Views/SummaryPage.xaml
+- Opis: Strona wyświetlająca podsumowanie punktów wszystkich uczestników we wszystkich wyścigach.
+- Elementy:
+  - Label: Podsumowanie Wyników
+  - CollectionView: Lista uczestników z sumą punktów i liczbą wyścigów
+  - Button: Resetuj Wyniki (resetuje wyniki i przenosi do BlurHomePage)
 
 
 

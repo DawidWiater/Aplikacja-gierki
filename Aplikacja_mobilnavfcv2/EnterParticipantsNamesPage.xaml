@@ -8,7 +8,7 @@
                FontSize="Large" 
                HorizontalOptions="Center" 
                VerticalOptions="CenterAndExpand"/>
-        <ScrollView>
+        <ScrollView HeightRequest="150">
             <CollectionView x:Name="ParticipantsNamesCollectionView" ItemsSource="{Binding ParticipantsNames}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
