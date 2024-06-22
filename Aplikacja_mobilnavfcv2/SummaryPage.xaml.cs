@@ -60,5 +60,10 @@ namespace Aplikacja_gierki.Views
                 await Navigation.PushAsync(new BlurHomePage());
             }
         }
+
+        private async void OnHomePageClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BlurHomePage());
+        }
     }
 }

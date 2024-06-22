@@ -10,7 +10,7 @@
 
         <!-- Overlay content -->
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20" Spacing="20">
-            <Label Text="jaki rodzaj turnieju? :" 
+            <Label Text="jaki rodzaj turnieju?" 
                    FontSize="Large" 
                    TextColor="White" 
                    HorizontalOptions="Center" 
@@ -27,6 +27,20 @@
                     TextColor="White" 
                     BackgroundColor="Gray" 
                     Clicked="OnMoreThanFourPlayerClicked" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"/>
+            <Button Text="Obecny turniej" 
+                    FontSize="Medium" 
+                    TextColor="White" 
+                    BackgroundColor="Green" 
+                    Clicked="OnCurrentTournamentClicked" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"/>
+            <Button Text="Wyniki" 
+                    FontSize="Medium" 
+                    TextColor="White" 
+                    BackgroundColor="Purple" 
+                    Clicked="OnResultsClicked" 
                     HorizontalOptions="Center" 
                     VerticalOptions="Center"/>
             <Button Text="Wyjście" 

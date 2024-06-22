@@ -28,6 +28,13 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <Button Text="Strona Główna" 
+                    FontSize="Medium" 
+                    TextColor="White" 
+                    BackgroundColor="Blue" 
+                    Clicked="OnHomePageClicked" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="EndAndExpand"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

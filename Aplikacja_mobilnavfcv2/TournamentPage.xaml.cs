@@ -1,6 +1,5 @@
 using Microsoft.Maui.Controls;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Aplikacja_gierki.Models;
@@ -13,15 +12,11 @@ namespace Aplikacja_gierki.Views
         private ObservableCollection<Race> AllRaces { get; set; } = new ObservableCollection<Race>();
         public ObservableCollection<Race> VisibleRaces { get; set; } = new ObservableCollection<Race>();
 
-        private Dictionary<string, int> ParticipantRaceCounts { get; set; } = new Dictionary<string, int>();
-        private List<Participant> Participants { get; set; } = new List<Participant>();
-
         // Konstruktor inicjalizuj¹cy stronê turniejow¹
         public TournamentPage(ObservableCollection<Participant> participants, int numberOfRaces)
         {
             InitializeComponent(); // Inicjalizacja komponentów
             NumberOfRacesLabel.Text = $"Liczba wyœcigów: {numberOfRaces}"; // Ustawienie liczby wyœcigów
-            Participants = participants.ToList();
             GenerateRaces(participants, numberOfRaces); // Generowanie wyœcigów
             LoadNextRaces(); // Wczytywanie pierwszych wyœcigów
             BindingContext = this; // Ustawienie kontekstu danych
@@ -32,38 +27,11 @@ namespace Aplikacja_gierki.Views
         {
             var random = new Random();
             var participantList = participants.ToList();
-            int participantCount = participantList.Count;
-
-            // Initialize the dictionary to count the number of races each participant has joined
-            foreach (var participant in participantList)
-            {
-                ParticipantRaceCounts[participant.Name] = 0;
-            }
 
             for (int i = 1; i <= numberOfRaces; i++)
             {
-                var raceParticipants = new List<RaceParticipant>();
-
-                // Ensure each participant participates in at least all but one race
-                var availableParticipants = participantList.Where(p => ParticipantRaceCounts[p.Name] < numberOfRaces - 1).ToList();
-                var requiredParticipants = participantList.Where(p => ParticipantRaceCounts[p.Name] < (i - 1)).ToList();
-
-                // If the available participants are fewer than 4, add the required participants to make it up
-                if (availableParticipants.Count < 4)
-                {
-                    availableParticipants.AddRange(requiredParticipants);
-                }
-
-                // Shuffle and select participants for the race
-                var selectedParticipants = availableParticipants.OrderBy(x => random.Next()).Take(4).ToList();
-
-                // Add selected participants to the race and update their counts
-                foreach (var participant in selectedParticipants)
-                {
-                    raceParticipants.Add(new RaceParticipant { Name = participant.Name });
-                    ParticipantRaceCounts[participant.Name]++;
-                }
-
+                var shuffledParticipants = participantList.OrderBy(x => random.Next()).Take(4).ToList();
+                var raceParticipants = shuffledParticipants.Select(p => new RaceParticipant { Name = p.Name }).ToList();
                 AllRaces.Add(new Race { Title = $"Wyœcig {i}", Participants = raceParticipants });
             }
         }
@@ -110,6 +78,11 @@ namespace Aplikacja_gierki.Views
                 };
                 await App.BlurDatabase.SaveRaceResultAsync(result); // Zapis wyniku do bazy danych
             }
+        }
+
+        private async void OnHomePageClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BlurHomePage());
         }
     }
 

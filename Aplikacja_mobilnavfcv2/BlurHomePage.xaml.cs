@@ -1,3 +1,7 @@
+using System;
+using System.Collections.ObjectModel;
+using Microsoft.Maui.Controls;
+using Aplikacja_gierki.Models;
 
 namespace Aplikacja_gierki.Views
 {
@@ -13,11 +17,22 @@ namespace Aplikacja_gierki.Views
             // Tutaj mo¿esz dodaæ logikê dla 4-osobowego turnieju
         }
 
-        // Metoda obs³uguj¹ca klikniêcie przycisku "4+ osobowy"
         private async void OnMoreThanFourPlayerClicked(object sender, EventArgs e)
         {
             // Przenosi na stronê wprowadzenia liczby uczestników
             await Navigation.PushAsync(new EnterNumberOfParticipantsPage());
+        }
+
+        private async void OnCurrentTournamentClicked(object sender, EventArgs e)
+        {
+            // Przenosi na stronê turniejow¹
+            await Navigation.PushAsync(new TournamentPage(new ObservableCollection<Participant>(), 0)); // Przyk³adowa inicjalizacja
+        }
+
+        private async void OnResultsClicked(object sender, EventArgs e)
+        {
+            // Przenosi na stronê podsumowania wyników
+            await Navigation.PushAsync(new SummaryPage());
         }
 
         private void OnExitClicked(object sender, EventArgs e)

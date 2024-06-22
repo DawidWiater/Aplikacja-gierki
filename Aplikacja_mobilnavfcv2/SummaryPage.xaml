@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Aplikacja_gierki.Views.SummaryPage"
              Title="Podsumowanie Wyników">
-    <ScrollView>
-        <VerticalStackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-            <Label Text="Podsumowanie Wyników" FontSize="Large" HorizontalOptions="Center" />
+    <VerticalStackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <Label Text="Podsumowanie Wyników" FontSize="Large" HorizontalOptions="Center" />
+        <ScrollView HeightRequest="400">
             <CollectionView x:Name="SummaryCollectionView">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
@@ -17,13 +17,20 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button Text="Resetuj Wyniki" 
-                    FontSize="Medium" 
-                    TextColor="White" 
-                    BackgroundColor="Red" 
-                    Clicked="OnResetClicked" 
-                    HorizontalOptions="Center" 
-                    VerticalOptions="EndAndExpand"/>
-        </VerticalStackLayout>
-    </ScrollView>
+        </ScrollView>
+        <Button Text="Strona Główna" 
+                FontSize="Medium" 
+                TextColor="White" 
+                BackgroundColor="Blue" 
+                Clicked="OnHomePageClicked" 
+                HorizontalOptions="Center" 
+                VerticalOptions="EndAndExpand"/>
+        <Button Text="Resetuj Wyniki" 
+                FontSize="Medium" 
+                TextColor="White" 
+                BackgroundColor="Red" 
+                Clicked="OnResetClicked" 
+                HorizontalOptions="Center" 
+                VerticalOptions="EndAndExpand"/>
+    </VerticalStackLayout>
 </ContentPage>
